@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="stylesheet" href="style.css">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <head>
+
+  <meta charset="UTF-8">
+
+  <style>
+body{
+transition:2s;
+}
+
+
+body.romantis{
+
+background:
+radial-gradient(circle,
+#ff9ecf,
+#160018 70%);
+
+}
+
+
+body.romantis .judul{
+
+animation:
+glowRomantis 1.5s infinite alternate;
+
+}
+
+
+@keyframes glowRomantis{
+
+from{
+filter:
+drop-shadow(0 0 10px pink);
+}
+
+
+to{
+filter:
+drop-shadow(0 0 50px white);
+}
+
+}
+
+.meteor {
+  position: fixed;
+  width: 4px;
+  height: 180px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    #fff,
+    #8fd3ff
+  );
+  border-radius: 50%;
+  filter: drop-shadow(0 0 15px white);
+  transform: rotate(45deg);
+  animation: meteorJatuh linear forwards;
+  z-index: 999;
+}
+
+@keyframes meteorJatuh {
+
+  0% {
+    transform:
+      translate(0,0)
+      rotate(45deg)
+      scale(0);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+    scale: 1;
+  }
+
+  100% {
+    transform:
+      translate(-700px,700px)
+      rotate(45deg)
+      scale(1);
+    opacity: 0;
+  }
+
+}
+</style>
+<body>
+<audio id="lagu" loop>
+  <source src="lagu1.mp3" type="audio/mpeg">
+</audio>
+</body>
+  
+  <div id="stars"></div>
+  <div id="star-container"></div>
+  <div id="moon"></div>
+  <div class="meteor meteor1"></div>
+<div class="meteor meteor2"></div>
+<div class="meteor meteor3"></div>
+<div class="isiSurat" id="surat">
+  
+  <h2>Untuk Olivia 🤍</h2>
+  
+  <p id="teks"></p>
+  <div class="loading" onclick="mulai()">
+  Loading...
+</div>
+  
+</div>
+<div id="Untuk Olivia" onclick="rahasia()"></div>
+
+<div class="pesanRahasia" id="rahasia">
+  Ada satu hal kecil yang belum kamu tahu 🤍
+</div>
+<script>
+
+function rahasia(){
+
+document
+.getElementById("rahasia")
+.classList.add("buka");
+
+}
+<script>
+
+function mulai(){
+
+let musik = document.getElementById("lagu");
+
+musik.play();
+
+document.querySelector(".loading").style.display="none";
+
+}
+
+</script>
+</body>
+  <section id="loading">
+    
+    <h1>Loading...</h1>
+    
+    <p>Dimohon untuk Menunggu 🤍</p>
+    
+  </section>
+  
+  <section id="intro" class="hide">
+    <h1 id="typing"></h1>
+    
+    <p class="subtitle">
+      Hari ini adalah harimu.
+    </p>
+    
+    <p class="text">
+      
+      Dan ada banyak orang yang bersyukur di hari ini.
+      
+      <br><br>
+      
+      Hari ketika Tuhan menghadirkan salah satu ciptaan Nya yang paling indah menurutku.
+      
+    </p>
+    
+    <button id="startBtn">
+    
+      🎁 Buka Hadiah
+      
+    </button>
+    
+  </section>
+  
+  <section id="gallery" class="hide">
+    
+    <h2> Pia 🤍</h2>
+    
+    <div class="slider">
+      
+      <img id="photo" src="images/foto1.jpg">
+      
+    </div>
+    
+    <p id="caption"></p>
+    
+    <button id="nextPhoto">
+    
+      Selanjutnya →
+      
+    </button>
+    
+  </section>
+  
+  <section id="letter" class="hide">
+    
+    <h2>💌 Untukmu</h2>
+    
+    <div class="letter-box">
+      
+      <p id="typingLetter">
+        
+      </p>
+      
+    </div>
+    
+    <button id="finish">
+    
+      Lanjut 🤍
+      
+    </button>
+    
+  </section>
+  
+  <section id="ending" class="hide">
+    
+    <h1>
+      
+      🎉 Happy Birthday 🎉
+      
+    </h1>
+    
+    <h2>
+      
+     Pia 🤍
+      
+    </h2>
+    
+    <p>
+      
+      "Kalau nanti semua doa hari ini terkabul,
+      izinkan aku menjadi salah satu doa
+      yang tetap kamu pertahankan."
+      
+    </p>
+    
+    <p>
+      
+      "Sampai bertemu di semua ulang tahunmu berikutnya."
+      
+    </p>
+    
+    <h3>
+      
+      Made with 🤍 by Kesayangangmu
+      
+    </h3>
+    
+  </section>
+  
+  <audio id="music" loop>
+  
+    <source src="lagu1.mp3" type="audio/mpeg">
+    
+  </audio>
+  
+  <script src="script.js"></script>
+  
+  <script>
+
+function buatMeteor(){
+
+let meteor = document.createElement("div");
+
+meteor.className="meteor";
+
+
+meteor.style.left =
+Math.random()*window.innerWidth + "px";
+
+
+meteor.style.top =
+Math.random()*window.innerHeight/2 + "px";
+
+
+meteor.style.animationDuration =
+(Math.random()*1.5+1)+"s";
+
+
+document.body.appendChild(meteor);
+
+
+setTimeout(()=>{
+meteor.remove();
+},3000);
+
+}
+
+
+setInterval(buatMeteor,500);
+
+
+</script>
+
+</body>
+
+</html>
